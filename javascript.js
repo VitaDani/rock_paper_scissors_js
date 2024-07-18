@@ -20,6 +20,16 @@ function getHumanChoice() {
     return human_choice.toLowerCase();
 }
 
+// Create the function that allows a round of the game to be played
+function playRound(humanChoice, computerChoice) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+}
+
+// Create two variables to keep the score for each player
+let humanScore = 0;
+let computerScore = 0;
+
 console.log(getComputerChoice());
 let x = getHumanChoice();
 console.log(x);
