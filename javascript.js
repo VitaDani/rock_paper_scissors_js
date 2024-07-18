@@ -24,12 +24,34 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
+
+    if (humanChoice == computerChoice) {
+        console.log("This round is a draw.");
+    } else if (humanChoice == 'rock' && computerChoice == 'paper') {
+        console.log("The computer wins this round. Paper beats Rock!")
+        computerScore++;
+    } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
+        console.log("The player wins this round. Rock beats Scissors!");
+        humanScore++;
+    } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+        console.log("The player wins this round. Paper beats Rock!");
+        humanScore++;
+    } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
+        console.log("The computer wins this round. Scissors beats Paper!");
+        computerScore++;
+    } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
+        console.log("The computer wins this round. Rock beats Scissors!");
+        computerScore++;
+    } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
+        console.log("The player wins this round. Scissors beats Paper!");
+        humanScore++;
+    }
+    console.log(`The computer has a score of ${computerScore} and the player has a score of ${humanScore}`);
 }
 
 // Create two variables to keep the score for each player
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(getComputerChoice());
-let x = getHumanChoice();
-console.log(x);
+playRound();
+console.log(humanScore, computerScore);
