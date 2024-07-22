@@ -49,9 +49,26 @@ function playRound(humanChoice, computerChoice) {
     console.log(`The computer has a score of ${computerScore} and the player has a score of ${humanScore}`);
 }
 
+// Create the function that plays multiple rounds to determine a winner
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+
+    console.log(`The player has ${humanScore} points and the computer has
+        ${computerScore} points.`);
+
+    if (humanScore > computerScore) {
+        console.log("The player wins!");
+    } else if (computerScore > humanScore) {
+        console.log("The computer wins!");
+    } else {
+        console.log("It's a draw.")
+    }
+}
+
 // Create two variables to keep the score for each player
 let humanScore = 0;
 let computerScore = 0;
 
-playRound();
-console.log(humanScore, computerScore);
+playGame();
