@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    font-style: italic;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: cyan;
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
