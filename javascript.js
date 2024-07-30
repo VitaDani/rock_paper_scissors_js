@@ -15,14 +15,27 @@ function getComputerChoice() {
 }
 
 // Create the function to get human choice as a prompt input
-function getHumanChoice() {
-    let human_choice = prompt("Pick between rock, paper, and scissors.");
-    return human_choice.toLowerCase();
-}
+let container = document.querySelector(".container");
+
+container.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch (target.id) {
+        case 'rock':
+            playRound(target.id);
+            break;
+        case 'paper':
+            playRound(target.id);
+            break;
+        case 'scissors':
+            playRound(target.id);
+            break;
+    }
+});
 
 // Create the function that allows a round of the game to be played
 function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
+    humanChoice = humanChoice;
     computerChoice = getComputerChoice();
 
     if (humanChoice == computerChoice) {
