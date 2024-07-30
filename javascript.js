@@ -14,7 +14,7 @@ function getComputerChoice() {
     }
 }
 
-// Create the function to get human choice as a prompt input
+// Create the ability to get human choice as a clickable button
 let container = document.querySelector(".container");
 
 container.addEventListener('click', (event) => {
@@ -59,9 +59,25 @@ function playRound(humanChoice, computerChoice) {
         console.log("The player wins this round. Scissors beats Paper!");
         humanScore++;
     }
+    h_score.textContent = `${humanScore}`;
+    c_score.textContent = `${computerScore}`;
     console.log(`The computer has a score of ${computerScore} and the player has a score of ${humanScore}`);
 }
 
 // Create two variables to keep the score for each player
 let humanScore = 0;
 let computerScore = 0;
+
+// Use querySelectors to have the page display the score
+let human_score = document.querySelector("#human_score");
+let computer_score = document.querySelector("#computer_score");
+let h_score = document.createElement("p");
+let c_score = document.createElement("p");
+
+
+h_score.style.textAlign = "center";
+c_score.style.textAlign = "center";
+
+
+human_score.appendChild(h_score);
+computer_score.appendChild(c_score);
