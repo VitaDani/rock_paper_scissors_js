@@ -41,3 +41,10 @@ button {
     height: auto;
     padding: 15px;
 }
+
+#round_winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+}
