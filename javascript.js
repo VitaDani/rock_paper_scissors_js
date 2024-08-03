@@ -16,6 +16,9 @@ function getComputerChoice() {
 
 // Create the ability to get human choice as a clickable button
 let container = document.querySelector(".container");
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
 container.addEventListener('click', (event) => {
     let target = event.target;
@@ -64,6 +67,22 @@ function playRound(humanChoice, computerChoice) {
     }
     h_score.textContent = humanScore;
     c_score.textContent = computerScore;
+
+    if (humanScore == 5) {
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+
+        winner.textContent = "The player has won the game with 5 points.";
+        start.style.display = "block";
+    } else if (computerScore == 5) {
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+
+        winner.textContent = "The computer has won the game with 5 points. Better luck next time.";
+        start.style.display = "block";
+    }
 }
 
 // Create two variables to keep the score for each player
@@ -74,9 +93,7 @@ let computerScore = 0;
 let human_score = document.querySelector("#human_score");
 let computer_score = document.querySelector("#computer_score");
 let h_score = document.createElement("p");
-h_score.textContent = 0;
 let c_score = document.createElement("p");
-c_score.textContent = 0;
 
 h_score.style.textAlign = "center";
 c_score.style.textAlign = "center";
@@ -84,3 +101,24 @@ c_score.style.textAlign = "center";
 
 human_score.appendChild(h_score);
 computer_score.appendChild(c_score);
+
+// Creating the start button functionality
+let start = document.querySelector("#start");
+rock.disabled = true;
+paper.disabled = true;
+scissors.disabled = true;
+
+function startGame() {
+    start.addEventListener("click", () => {
+        rock.disabled = false;
+        paper.disabled = false;
+        scissors.disabled = false;
+        h_score.textContent = 0;
+        c_score.textContent = 0;
+
+        start.style.display = "none";
+        winner.textContent = "The computer is ready to play.";
+    });
+}
+
+startGame();

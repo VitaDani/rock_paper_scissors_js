@@ -24,11 +24,30 @@ button {
     justify-content: center;
 }
 
+#rock {
+    background-image: url("images/rock.png");
+    width: 250px;
+    height: 245px;
+}
+
+#paper {
+    background-image: url("images/paper.png");
+    width: 250px;
+    height: 245px;
+}
+
+#scissors {
+    background-image: url("images/scissors.png");
+    width:250px;
+    height: 245px;
+}
+
 .scores {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-end;
-    height: 25%;
+    height: 10%;
+    gap: 50px;
 }
 
 #human_score, #computer_score {
@@ -47,4 +66,15 @@ button {
     justify-content: center;
     align-items: center;
     height: 25%;
+}
+
+#winner {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#start {
+    font-size: 50px;
+    width: 200px;
+    height: 100px;
 }
